@@ -1,0 +1,28 @@
+body{
+    background-color: rgba(37, 33, 33, 0.592);
+    color: white;
+}
+input{
+    background-color: transparent;
+}
+input ::placeholder{
+    color: white;
+}
+button{
+    border-color: rgb(33, 29, 29);
+    background-color: transparent;
+}
+button a{
+    color: white;
+    text-decoration: none;
+}
+option{
+    color: transparent;
+}
+.mainform{
+    margin-top: 100px;
+    display: flex;
+}
+.logo img{
+    height: 450px;   
+}
