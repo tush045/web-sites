@@ -1,3 +1,5 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
 import java.util.Scanner;
 class Student {
     String name;
@@ -25,11 +27,11 @@ class StudentDataEntry {
 
         Student[] students = new Student[10];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("Enter data for student " + (i + 1) + ":");
 
             System.out.print("Name: ");
-            String name = scanner.nextLine();
+            String name = scanner.next();
 
             System.out.print("Subject 1: ");
             int subject1 = scanner.nextInt();
@@ -39,14 +41,12 @@ class StudentDataEntry {
 
             System.out.print("Subject 3: ");
             int subject3 = scanner.nextInt();
-
-            students[i] = new Student(name, subject1, subject2, subject3);
             System.out.println();
         }
 
         // Display the entered data
         System.out.println("Entered student data:");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("Student " + (i + 1) + ":");
             students[i].display();
             System.out.println();
