@@ -1,15 +1,18 @@
-import java.util.Scanner;
+import java.util.*;
+
 class Student {
     String name;
     int subject1;
     int subject2;
     int subject3;
+    int total;
 
     public Student(String name, int subject1, int subject2, int subject3) {
         this.name = name;
         this.subject1 = subject1;
         this.subject2 = subject2;
         this.subject3 = subject3;
+        this.total = subject1 + subject2 + subject3;
     }
 
     public void display() {
@@ -17,19 +20,18 @@ class Student {
         System.out.println("Subject 1: " + subject1);
         System.out.println("Subject 2: " + subject2);
         System.out.println("Subject 3: " + subject3);
+        System.out.println("Total: " + total);
     }
-}
-class StudentDataEntry {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Student[] students = new Student[2];
 
-        Student[] students = new Student[10];
-
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
             System.out.println("Enter data for student " + (i + 1) + ":");
 
             System.out.print("Name: ");
-            String name = scanner.nextLine();
+            String name = scanner.next();
 
             System.out.print("Subject 1: ");
             int subject1 = scanner.nextInt();
@@ -39,17 +41,25 @@ class StudentDataEntry {
 
             System.out.print("Subject 3: ");
             int subject3 = scanner.nextInt();
-
+            System.out.println();
             students[i] = new Student(name, subject1, subject2, subject3);
-            System.out.println();
         }
 
-        // Display the entered data
-        System.out.println("Entered student data:");
-        for (int i = 0; i < 10; i++) {
-            System.out.println("Student " + (i + 1) + ":");
-            students[i].display();
-            System.out.println();
+        int[] arr = new int[2];
+        for (int i = 0; i < 2; i++) {
+            arr[i] = students[i].total;
         }
+
+        int index = 0;
+        int max = arr[0];
+        for (int i = 1; i < 2; i++) { 
+            if (arr[i] > max) {
+                max = arr[i];
+                index = i;
+            }
+        }
+
+        System.out.println("The topper of class 10th is " + students[index].name + " with the marks " + max);
     }
 }
+
